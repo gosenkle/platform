@@ -1,17 +1,19 @@
 package club.isource.platform.service.inf;
 
-import club.isource.platform.controller.example.UserVo;
+import club.isource.platform.dao.po.User;
+import club.isource.platform.vo.BaseVo;
 import club.isource.platform.vo.PageInfoVo;
 
-/** 
-	* @author  高新国
-	* @date 创建时间：2018年4月9日 下午2:59:11	
-	* @version 1.0
-**/
-
-
 public interface UserService {
-	UserVo selectUserByKey(String userid);
-	
-	PageInfoVo<UserVo> selectAll();
+    club.isource.platform.vo.PageInfoVo<User> selectAll();
+
+    club.isource.platform.vo.BaseVo<User> selectByKey(Integer id);
+
+    club.isource.platform.vo.BaseVo<User> deleteByKey(Integer id);
+
+    club.isource.platform.vo.BaseVo<User> add(User req);
+
+    club.isource.platform.vo.BaseVo<User> update(User req);
+
+    club.isource.platform.vo.PageInfoVo<User> selectByCondtion(User req);
 }

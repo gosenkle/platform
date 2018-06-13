@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.github.pagehelper.Page;
 
 /** 
@@ -11,7 +12,8 @@ import com.github.pagehelper.Page;
 	* @date 创建时间：2017年11月15日 下午5:55:11	
 	* @version 1.0
 **/
-public class PageInfoVo<T> extends BaseVo implements Serializable{
+@JsonIgnoreProperties(ignoreUnknown=true)
+public class PageInfoVo<T> extends BaseVo<T> implements Serializable{
 
 	private static final long serialVersionUID = 1L;
     //当前页
@@ -34,8 +36,8 @@ public class PageInfoVo<T> extends BaseVo implements Serializable{
     private long total;
     //总页数
     private int pages;
-    //结果集
-    private List<T> list;
+//    //结果集
+//    private List<T> list;
 
     //第一页
     private int firstPage;

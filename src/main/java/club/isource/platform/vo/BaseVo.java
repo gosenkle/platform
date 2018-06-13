@@ -1,6 +1,11 @@
 package club.isource.platform.vo;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /** 
 	* @author  高新国
@@ -8,11 +13,46 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 	* @version 1.0
 **/
 @JsonIgnoreProperties(ignoreUnknown=true)
-public class BaseVo {
-	
+@ApiModel
+public class BaseVo<T> {
+	@ApiModelProperty(value="是否成功")
 	private String code = "1";
 	
+	@ApiModelProperty(value="错误信息")
 	private String errMsg;
+	
+	@ApiModelProperty(value="单行数据")
+	private T data;
+	
+	@ApiModelProperty(value="多行数据")
+	protected List<T> list;
+	
+	@ApiModelProperty(value="变更行数")
+	private int count;
+	
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public List<T> getList() {
+		return list;
+	}
+
+	public void setList(List<T> list) {
+		this.list = list;
+	}
+
+	public T getData() {
+		return data;
+	}
+
+	public void setData(T data) {
+		this.data = data;
+	}
 
 	public String getCode() {
 		return code;

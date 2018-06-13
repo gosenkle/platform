@@ -36,6 +36,10 @@ public class PaginationFilter {
 		HttpServletRequest request = ((ServletRequestAttributes) attributes).getRequest();
 		String page = request.getParameter("page");
 		String pageSize = request.getParameter("pageSize");
+		if (StringUtils.isEmpty(page) && StringUtils.isEmpty(pageSize)) {
+			// 无分页参数则不需要启动分页
+			return;
+		}
 		if (StringUtils.isEmpty(page)) {
 			page = "1";
 		}
