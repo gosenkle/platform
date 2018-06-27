@@ -5,8 +5,9 @@
 * 集成基于mybatis的分页功能
 * 集成swagger2实现在线接口文档和mock功能
 * 集成springsecurity实现用户认证和授权（token）
+* 集成Email
+* 集成日志logback，且使用邮件日志报警
 ## TODO
-* 集成日志
 * 集成健康检查（监控）
 * 统一异常处理
 * 国际化

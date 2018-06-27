@@ -16,7 +16,7 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel
 public class BaseVo<T> {
 	@ApiModelProperty(value="是否成功")
-	private String code = "1";
+	private int code = 0;
 	
 	@ApiModelProperty(value="错误信息")
 	private String errMsg;
@@ -54,14 +54,6 @@ public class BaseVo<T> {
 		this.data = data;
 	}
 
-	public String getCode() {
-		return code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
 	public String getErrMsg() {
 		return errMsg;
 	}
@@ -70,9 +62,18 @@ public class BaseVo<T> {
 		this.errMsg = errMsg;
 	}
 
+	public int getCode() {
+		return code;
+	}
+
+	public void setCode(int code) {
+		this.code = code;
+	}
+
 	@Override
 	public String toString() {
-		return "BaseVo [code=" + code + ", errMsg=" + errMsg + "]";
+		return "BaseVo [code=" + code + ", errMsg=" + errMsg + ", data=" + data + ", list=" + list + ", count=" + count
+				+ "]";
 	}
-	
+
 }

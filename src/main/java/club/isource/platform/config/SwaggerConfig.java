@@ -21,7 +21,6 @@ import springfox.documentation.spring.web.plugins.Docket;
 public class SwaggerConfig {
 	@Bean
     public Docket platformApi() {
-		System.err.println("文档集装。。。");
       return new Docket(DocumentationType.SWAGGER_2) // swagger 3、Docket Springfox的主要api配置装置，这里初始化为swagger规范2.0
           .select() // swagger 4、 返回ApiSelectorBuilder实例 对暴露的端点进行细粒度的控制
             .apis(RequestHandlerSelectors.any()) // swagger 5、使用断言确定请求处理的选择，这里使用一个any缺省断言
